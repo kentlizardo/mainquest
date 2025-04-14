@@ -10,6 +10,7 @@
     "build:web": "yarn expo export --platform web",
     "test": "jest --watchAll",
     "lint": "expo lint",
+    "lint:fix": "yarn eslint . --fix",
     "check-types": "tsc --noEmit"
   },
   "jest": {
