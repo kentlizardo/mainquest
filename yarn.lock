@@ -1364,7 +1364,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.24.0, @eslint/js@npm:^9.18.0":
+"@eslint/js@npm:9.24.0, @eslint/js@npm:^9.18.0, @eslint/js@npm:^9.24.0":
   version: 9.24.0
   resolution: "@eslint/js@npm:9.24.0"
   checksum: 10c0/efe22e29469e4140ac3e2916be8143b1bcfd1084a6edf692b7a58a3e54949d53c67f7f979bc0a811db134d9cc1e7bff8aa71ef1376b47eecd7e226b71206bb36
@@ -3311,9 +3311,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@repo/typescript-configs@workspace:*, @repo/typescript-configs@workspace:configs/typescript":
+"@repo/config-eslint@workspace:*, @repo/config-eslint@workspace:packages/config-eslint":
   version: 0.0.0-use.local
-  resolution: "@repo/typescript-configs@workspace:configs/typescript"
+  resolution: "@repo/config-eslint@workspace:packages/config-eslint"
+  dependencies:
+    "@eslint/js": "npm:^9.24.0"
+    eslint: "npm:^8.57.0"
+    eslint-config-expo: "npm:^8.0.1"
+    eslint-config-prettier: "npm:^10.1.2"
+    eslint-plugin-only-warn: "npm:^1.1.0"
+    eslint-plugin-prettier: "npm:^5.2.6"
+    eslint-plugin-turbo: "npm:^2.5.0"
+    prettier: "npm:^3.5.3"
+    typescript: "npm:^5.8.3"
+    typescript-eslint: "npm:^8.29.1"
   languageName: unknown
   linkType: soft
 
@@ -4853,7 +4864,6 @@ __metadata:
     "@nestjs/platform-express": "npm:^11.0.1"
     "@nestjs/schematics": "npm:^11.0.0"
     "@nestjs/testing": "npm:^11.0.1"
-    "@repo/typescript-configs": "workspace:*"
     "@swc/cli": "npm:^0.6.0"
     "@swc/core": "npm:^1.10.7"
     "@types/express": "npm:^5.0.0"
@@ -6670,6 +6680,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:16.0.3":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: 10c0/109457ac5f9e930ca8066ea33887b6f839ab24d647a7a8b49ddcd1f32662e2c35591c5e5b9819063e430148a664d0927f0cbe60cf9575d89bc524f47ff7e78f0
+  languageName: node
+  linkType: hard
+
 "dotenv@npm:^16.4.5":
   version: 16.5.0
   resolution: "dotenv@npm:16.5.0"
@@ -7034,7 +7051,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-expo@npm:~8.0.1":
+"eslint-config-expo@npm:^8.0.1, eslint-config-expo@npm:~8.0.1":
   version: 8.0.1
   resolution: "eslint-config-expo@npm:8.0.1"
   dependencies:
@@ -7051,7 +7068,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^10.0.1":
+"eslint-config-prettier@npm:^10.0.1, eslint-config-prettier@npm:^10.1.2":
   version: 10.1.2
   resolution: "eslint-config-prettier@npm:10.1.2"
   peerDependencies:
@@ -7150,7 +7167,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^5.2.2":
+"eslint-plugin-only-warn@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "eslint-plugin-only-warn@npm:1.1.0"
+  checksum: 10c0/72dfc947aa944321dfa63938f2e8bb91e7fda68f988837a8accf4551534ed04bf71957a46d00a4ddc43de5fe31055da12365b2c53c6ee6508f2ba203cd2cfa27
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-prettier@npm:^5.2.2, eslint-plugin-prettier@npm:^5.2.6":
   version: 5.2.6
   resolution: "eslint-plugin-prettier@npm:5.2.6"
   dependencies:
@@ -7204,6 +7228,18 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
   checksum: 10c0/c850bfd556291d4d9234f5ca38db1436924a1013627c8ab1853f77cac73ec19b020e861e6c7b783436a48b6ffcdfba4547598235a37ad4611b6739f65fd8ad57
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-turbo@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "eslint-plugin-turbo@npm:2.5.0"
+  dependencies:
+    dotenv: "npm:16.0.3"
+  peerDependencies:
+    eslint: ">6.6.0"
+    turbo: ">2.0.0"
+  checksum: 10c0/08339aad9508d7ace6de7c35192aa28a0288a419847155dbf9b8b96d348c63fb17922693ab55bea66eb9df6d9782ac929c8daee644f5450c51d7800429653bfb
   languageName: node
   linkType: hard
 
@@ -11467,7 +11503,7 @@ __metadata:
     "@react-navigation/bottom-tabs": "npm:^7.2.0"
     "@react-navigation/native": "npm:^7.0.14"
     "@react-three/fiber": "npm:^9.1.2"
-    "@repo/typescript-configs": "workspace:*"
+    "@repo/config-eslint": "workspace:*"
     "@types/jest": "npm:^29.5.12"
     "@types/react": "npm:~18.3.12"
     "@types/react-test-renderer": "npm:^18.3.0"
@@ -12302,7 +12338,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.4.2":
+"prettier@npm:^3.4.2, prettier@npm:^3.5.3":
   version: 3.5.3
   resolution: "prettier@npm:3.5.3"
   bin:
@@ -15065,7 +15101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-eslint@npm:^8.20.0":
+"typescript-eslint@npm:^8.20.0, typescript-eslint@npm:^8.29.1":
   version: 8.29.1
   resolution: "typescript-eslint@npm:8.29.1"
   dependencies:
@@ -15089,7 +15125,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.3.3, typescript@npm:^5.7.3":
+"typescript@npm:^5.3.3, typescript@npm:^5.7.3, typescript@npm:^5.8.3":
   version: 5.8.3
   resolution: "typescript@npm:5.8.3"
   bin:
@@ -15109,7 +15145,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.7.3#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.7.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.8.3#optional!builtin<compat/typescript>":
   version: 5.8.3
   resolution: "typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"
   bin:
