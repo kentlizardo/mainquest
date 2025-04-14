@@ -6,6 +6,9 @@
     "nixpacksPlan": {
       "providers": ["node"],
       "phases": {
+        "setup": {
+          "nixPkgs": ["nodejs", "yarn"]
+        },
         "install": {
           "dependsOn": ["setup"],
           "cmds": ["yarn install"]

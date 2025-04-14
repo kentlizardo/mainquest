@@ -4,8 +4,11 @@
     "buildCommand": "yarn build:web",
     "watchPatterns": ["native/**"],
     "nixpacksPlan": {
-      "providers": ["node"],
+      "providers": ["node", "staticfile"],
       "phases": {
+        "setup": {
+          "nixPkgs": ["nodejs", "yarn"]
+        },
         "install": {
           "dependsOn": ["setup"],
           "cmds": ["yarn install"]
