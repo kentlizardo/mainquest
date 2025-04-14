@@ -7,11 +7,11 @@ providers = ['node']
   nixPkgs = ['nodejs', 'yarn']
 
 [phases.install]
-  cmds = ['yarn']
+  cmd = ['yarn install']
 
 [phases.build]
   dependsOn = ['install']
-  cmds = ['yarn build:web']
+  cmds = ['turbo build --filter=native --filter=./packages/*', 'cd native']
 
 [phases.caddy]
   dependsOn = ['build']
