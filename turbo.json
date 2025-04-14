@@ -15,7 +15,9 @@
         "persistent": true,
         "cache": false
       },
-      "lint": {},
+      "lint": {
+        "dependsOn": ["^build", "^lint"]
+      },
       "format": {
         "outputs": [],
         "outputLogs": "new-only"
