@@ -2,19 +2,17 @@
   "name": "mainquest",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "packageManager": "yarn@4.9.1",
+  "workspaces": [
+    "api",
+    "native",
+    "packages/*"
+  ],
+  "engines": {
+    "npm": "please-use-yarn",
+    "pnpm": "please-use-yarn"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.8.0",
   "devDependencies": {
     "turbo": "^2.5.0"
-  },
-  "engines": {
-    "npm": "please-use-pnpm",
-    "yarn": "please-use-pnpm"
   }
 }
