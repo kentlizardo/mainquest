@@ -15,10 +15,9 @@
         "cache": false
       },
       "lint": {
-        "dependsOn": ["^lint"],
-        "inputs": ["{src,apps,libs,test}/**/*.ts", ".eslintrc*"],
-        "outputs": [".eslintcache"]
+        "outputs": []
       },
+      "test": {},
       "clean": {
         "cache": false
       }

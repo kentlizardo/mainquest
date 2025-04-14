@@ -12,6 +12,12 @@
     "npm": "please-use-yarn",
     "pnpm": "please-use-yarn"
   },
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "turbo lint"
+  },
   "devDependencies": {
     "turbo": "^2.5.0"
   }
