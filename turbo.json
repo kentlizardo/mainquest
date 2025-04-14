@@ -14,8 +14,10 @@
         "persistent": true,
         "cache": false
       },
-      "lint": {
-        "outputs": []
+      "lint": {},
+      "format": {
+        "outputs": [],
+        "outputLogs": "new-only"
       },
       "test": {},
       "clean": {
