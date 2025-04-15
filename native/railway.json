@@ -10,7 +10,7 @@
       },
       "phases": {
         "setup": {
-          "nixPkgs": ["nodejs", "yarn"]
+          "nixPkgs": ["nodejs", "yarn-berry"]
         },
         "install": {
           "dependsOn": ["setup"],
