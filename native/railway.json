@@ -20,8 +20,7 @@
           "dependsOn": ["install"],
           "cmds": [
             "turbo build --filter=./packages/*",
-            "cd native",
-            "yarn build:web"
+            "cd native && yarn build:web"
           ]
         },
         "caddy": {
@@ -31,13 +30,12 @@
         },
         "fmt": {
           "dependsOn": ["caddy"],
-          "cmds": ["caddy fmt --overwrite Caddyfile"]
+          "cmds": ["cd native && caddy fmt --overwrite Caddyfile"]
         }
       }
     }
   },
   "deploy": {
-    "preDeployCommand": "cd native",
-    "startCommand": "exec caddy run --config Caddyfile --adapter caddyfile 2>&1"
+    "startCommand": "cd native && exec caddy run --config Caddyfile --adapter caddyfile 2>&1"
   }
 }

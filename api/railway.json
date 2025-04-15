@@ -24,7 +24,6 @@
     }
   },
   "deploy": {
-    "preDeployCommand": "cd api",
-    "startCommand": "yarn start"
+    "startCommand": "cd api && yarn start:prod"
   }
 }
