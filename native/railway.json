@@ -1,0 +1,43 @@
+{
+  "$schema": "https://railway.com/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "watchPatterns": ["native/**"],
+    "nixpacksPlan": {
+      "providers": ["node"],
+      "variables": {
+        "NODE_ENV": "production"
+      },
+      "phases": {
+        "setup": {
+          "nixPkgs": ["nodejs", "yarn"]
+        },
+        "install": {
+          "dependsOn": ["setup"],
+          "cmds": ["yarn install"]
+        },
+        "build": {
+          "dependsOn": ["install"],
+          "cmds": [
+            "turbo build --filter=./packages/*",
+            "cd native",
+            "yarn build:web"
+          ]
+        },
+        "caddy": {
+          "dependsOn": ["build"],
+          "nixPkgsArchive": "ba913eda2df8eb72147259189d55932012df6301",
+          "nixPkgs": ["caddy"]
+        },
+        "fmt": {
+          "dependsOn": ["caddy"],
+          "cmds": ["caddy fmt --overwrite Caddyfile"]
+        }
+      }
+    }
+  },
+  "deploy": {
+    "preDeployCommand": "cd native",
+    "startCommand": "exec caddy run --config Caddyfile --adapter caddyfile 2>&1"
+  }
+}
